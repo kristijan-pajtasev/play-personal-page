@@ -1,0 +1,49 @@
+@(title: String)(tags: String)(description: String)(content: Html)
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>@title</title>
+
+
+        <meta charset="UTF-8">
+        <meta name="description" content="@{description}">
+        <meta name="keywords" content="@{tags}">
+        <meta name="author" content="Kristijan Pajtasev">
+
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+        @*<link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">*@
+        @*<script src="@routes.Assets.versioned("javascripts/hello.js")" type="text/javascript"></script>*@
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li>Kristijan Pajtasev</li>
+                <li>
+					<a href="/posts">Blog</a>
+				</li>
+                <li>
+					<a href="https://github.com/kristijan-pajtasev" target="_blank">GitHub</a>
+				</li>
+                <li>
+					<a href="https://www.npmjs.com/~kpajtasev" target="_blank">Npm</a>
+				</li>
+                <li>
+                    <a>
+                        <a href="https://ie.linkedin.com/in/kristijan-pajtašev-58591373" target="_blank">
+                            <img src="@routes.Assets.versioned("images/linkedin_logo.png")" alt="linkedin_logo" />
+                        </a>
+                        @*<a href="https://ie.linkedin.com/in/kristijan-pajtašev-58591373" target="_blank">*@
+                            @*<img style="height: 39px;" src="@routes.Assets.versioned("images/GitHub_Logo.png")" alt="linkedin_logo" />*@
+                        @*</a>*@
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="content">
+        @content
+        </div>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+@(post: models.Post)
+
+@main("Kristijan Pajtasev - Edit post")("")("") {
+
+  <form method="post" action="/posts/edit/@{post.urlTitle}">
+    <input type="hidden" name="id" value="@{post.id}" />
+
+    <label>Title:
+      <input name="title" value="@{post.title}" />
+    </label>
+
+    <label>URL title:
+      <input name="urlTitle" value="@{post.urlTitle}" />
+    </label>
+
+    <label>Tags:
+      <input name="tags" value="@{post.tags}" />
+    </label>
+
+    <label>Description:
+      <input name="description" value="@{post.description}" />
+    </label>
+
+    <label>Post:
+      <textarea name="post">@{post.post}</textarea>
+    </label>
+
+    <input type="submit" />
+  </form>
+}

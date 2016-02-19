@@ -1,0 +1,138 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 100%;
+  overflow-y: auto;
+}
+
+* {
+  line-height: 140%;
+  box-sizing: border-box;
+  position: relative;
+  color: #333;
+}
+
+h1 { font-size: 2.5rem; /* 16 x 2.25 = 36 */ }
+h2 { font-size: 1.750rem; /* 16 x 1.5 = 24 */ }
+h3 { font-size: 1.250rem; /* 16 x 1.125 = 18 */ }
+h4 { font-size: 1rem; /* 16 x 0.875 = 14 */ }
+p, div.post { font-size: 1rem; /* 16 x 0.75 = 12 */ }
+
+nav {
+  float: left;
+  width: 20%;
+  height: 100%;
+  background: white;
+  overflow: hidden;
+}
+
+#content {
+  width: 80%;
+  height: 100%;
+  background: white;
+  float: right;
+  overflow-y: auto;
+}
+
+nav, #content {
+  padding: 4px;
+}
+
+a {
+  color: #0277BD;
+  text-decoration: none;
+}
+
+#content {
+  article {
+    max-width: 800px;
+    width: 80%;
+    margin: auto;
+    background: white;
+    padding-bottom: 0;
+    margin-bottom: 16px;
+    border-bottom: thin solid #ddd;
+  }
+
+  form {
+    max-width: 400px;
+    width: 80%;
+    margin: auto;
+    background: white;
+    padding-bottom: 0;
+    margin-bottom: 16px;
+
+    h1{
+      margin: 0;
+    }
+
+    input, label, textarea {
+      width: 100%;
+    }
+
+    textarea {
+      height: 150px;
+    }
+  }
+}
+
+#content article:last-of-type {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+#content article>div.post {
+  margin: 8px 0 8px;
+}
+
+#content article h2 {
+  margin-bottom: 4px;
+  margin-top: 0;
+}
+
+nav ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media screen and (max-width: 640px) {
+  nav, #content {
+    float: none;
+    width: 100%;
+    height: auto;
+    padding: 8px;
+  }
+
+  nav li {
+    text-align: center;
+  }
+
+  nav li:last-of-type {
+    display: none;
+  }
+
+  #content article {
+    width: 100%;
+  }
+
+  body {
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+
+  h1 { font-size: 2.625rem; /* 16 x 2.25 = 36 */ }
+  h2 { font-size: 1.875rem; /* 16 x 1.5 = 24 */ }
+  h3 { font-size: 1.375rem; /* 16 x 1.125 = 18 */ }
+  h4 { font-size: 1.125rem; /* 16 x 0.875 = 14 */ }
+  p, div.post { font-size: 1.125rem; /* 16 x 0.75 = 12 */ }
+}

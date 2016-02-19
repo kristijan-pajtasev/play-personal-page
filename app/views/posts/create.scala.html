@@ -1,0 +1,26 @@
+@main("Kristijan Pajtasev - Add post")("")("") {
+
+  <form method="post" action="/posts/create">
+    <label>Title:
+      <input name="title" />
+    </label>
+
+    <label>URL title:
+      <input name="urlTitle" />
+    </label>
+
+    <label>Tags:
+      <input name="tags" />
+    </label>
+
+    <label>Description:
+      <input name="description" />
+    </label>
+
+    <label>Post:
+      <textarea name="post"></textarea>
+    </label>
+
+    <input type="submit" />
+  </form>
+}

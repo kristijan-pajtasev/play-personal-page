@@ -1,0 +1,27 @@
+@(posts: List[models.Post])(tags: String)
+
+@main("Kristijan Pajtasev - Blog")(tags)("Personal blog") {
+
+    @*<ul>*@
+    @for(post <- posts) {
+        @*<li>post - id: @{post.id} - title: @{post.title}*@
+            @*- url_title: @{post.urlTitle}*@
+            @*- post: @{post.post}*@
+            @*- created: @{post.created.format("dd MM yyyy")}*@
+            @*- published: @{post.published.format("dd MM yyyy")}*@
+    @*</li>*@
+
+        <article>
+            <h2>
+                <a href="/posts/@{post.urlTitle}">@{post.title}</a>
+            </h2>
+            <div class="post">
+                @Html(post.getPost())
+            </div>
+        </article>
+    }
+    @*</ul>*@
+
+
+
+}
