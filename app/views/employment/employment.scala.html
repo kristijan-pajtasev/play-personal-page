@@ -1,0 +1,32 @@
+@(employment: models.Employment)(tags: String)
+
+@main("Kristijan Pajtasev - CV")(tags)("CV") {
+
+    <article class="employment">
+            <h2><a href="/employment/@{employment.getId()}">@{employment.getCompanyName()} -
+            @{employment.getRoleName()}</a></h2>
+        <div>@{employment.getStartDate().format("MMMM yyyy")} -
+            @{employment.getEndDate().format("MMMM yyyy")}</div>
+
+        <h4>Company description:</h4>
+        <div>@{employment.getCompanyDescription()}</div>
+
+        <h4>Role description:</h4>
+        <div>@{employment.getDescription()}</div>
+
+        <h4>Responsibilities:</h4>
+        <ul>
+        @for(responsibility <- employment.getResponsibilitiesAsArray()) {
+            <li>@{responsibility}</li>
+        }
+        </ul>
+
+        <h4>Technologies:</h4>
+        <ul>
+            @for(technology <- employment.getTechnologiesAsArray()) {
+                <li>@{technology}</li>
+            }
+        </ul>
+    </article>
+
+}

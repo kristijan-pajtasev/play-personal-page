@@ -1,0 +1,51 @@
+@(employment: models.Employment)
+
+@main("Kristijan Pajtasev - Edit empoyment")("")("") {
+
+  <form method="post" action="/employment/edit">
+
+    <input type="hidden" name="id" value="@{employment.getId()}"/>
+
+    <label>Company Name:
+      <input name="companyName" value="@{employment.getCompanyName()}" />
+    </label>
+
+    <label>Role Name:
+      <input name="roleName" value="@{employment.getRoleName()}" />
+    </label>
+
+    <label>Start date:
+      <input name="startDate" value="@{employment.getStartDate().format("dd/MM/YYYY")}" />
+    </label>
+
+    <label>End date:
+      <input name="endDate" value="@{employment.getEndDate().format("dd/MM/YYYY")}" />
+    </label>
+
+    <label>Tags:
+      <input name="tags" value="@{employment.getTags()}" />
+    </label>
+
+    <label>Company Description:
+      <textarea name="companyDescription">@{employment.getCompanyDescription()}</textarea>
+    </label>
+
+    <label>Description:
+      <textarea name="description">@{employment.getDescription()}</textarea>
+    </label>
+
+    <label>Responsibilities:
+      <textarea name="responsibilities">@{employment.getResponsibilities()}</textarea>
+    </label>
+
+    <label>Technologies:
+      <textarea name="technologies">@{employment.getTechnologies()}</textarea>
+    </label>
+
+    <label>Tags:
+      <input name="tags" value="@{employment.getTags()}" />
+    </label>
+
+    <input type="submit" />
+  </form>
+}

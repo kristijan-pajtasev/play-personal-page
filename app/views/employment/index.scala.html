@@ -1,0 +1,17 @@
+@(employments: List[models.Employment])(tags: String)
+
+@main("Kristijan Pajtasev - CV")(tags)("CV") {
+
+    @for(employment <- employments) {
+        <article>
+            <h2><a href="/employment/@{employment.getId()}">@{employment.getCompanyName()} -
+                @{employment.getRoleName()}</a></h2>
+            <div>@{employment.getStartDate().format("MMMM yyyy")} -
+                @{employment.getEndDate().format("MMMM yyyy")}</div>
+            <div>@{employment.getTags()}</div>
+        </article>
+    }
+
+
+
+}

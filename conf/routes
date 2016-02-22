@@ -12,6 +12,14 @@ GET     /posts/edit/:title_url                           controllers.PostsContro
 POST    /posts/edit/:title_url                           controllers.PostsController.edit(title_url: String)
 GET     /posts/:title_url                           controllers.PostsController.post(title_url: String)
 
+
+GET     /employment                           controllers.EmploymentController.index()
+GET     /employment/create                          controllers.EmploymentController.createEmployment()
+POST     /employment/create                          controllers.EmploymentController.create()
+GET     /employment/:id                           controllers.EmploymentController.employment(id: Long)
+GET    /employment/:id/edit                           controllers.EmploymentController.editEemployment(id: Long)
+POST    /employment/edit                           controllers.EmploymentController.edit()
+
 GET     /login                           controllers.LoginController.index()
 POST    /login                           controllers.LoginController.authenticate()
 

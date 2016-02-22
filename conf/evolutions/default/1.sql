@@ -3,6 +3,20 @@
 
 # --- !Ups
 
+create table employment (
+  id                        bigserial not null,
+  company_name              varchar(255),
+  role_name                 varchar(255),
+  start_date                timestamp,
+  end_date                  timestamp,
+  company_description       varchar(255),
+  description               varchar(255),
+  responsibilities          varchar(255),
+  technologies              varchar(255),
+  tags                      varchar(255),
+  constraint pk_employment primary key (id))
+;
+
 create table posts (
   id                        bigserial not null,
   title                     varchar(255),
@@ -35,6 +49,8 @@ create table users (
 
 
 # --- !Downs
+
+drop table if exists employment cascade;
 
 drop table if exists posts cascade;
 
