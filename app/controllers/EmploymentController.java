@@ -42,7 +42,6 @@ public class EmploymentController extends Controller {
         Employment employment = Employment.find.byId(id);
         if(null == employment) {
             return notFound("page not found");
-
         }
         return ok(edit.render(employment));
     }
@@ -51,7 +50,6 @@ public class EmploymentController extends Controller {
         Employment employment = Employment.find.byId(id);
         if(null == employment) {
             return notFound("page not found");
-
         }
         return ok(views.html.employment.employment.render(employment, ""));
     }
