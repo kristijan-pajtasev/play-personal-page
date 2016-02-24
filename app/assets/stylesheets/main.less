@@ -1,3 +1,5 @@
+@import "variables";
+
 html, body {
   width: 100%;
   height: 100%;
@@ -15,14 +17,14 @@ body {
   line-height: 140%;
   box-sizing: border-box;
   position: relative;
-  color: #333;
+  color: @font-base-color;
 }
 
-h1 { font-size: 2.5rem; /* 16 x 2.25 = 36 */ }
-h2 { font-size: 1.750rem; /* 16 x 1.5 = 24 */ }
-h3 { font-size: 1.250rem; /* 16 x 1.125 = 18 */ }
-h4 { font-size: 1rem; /* 16 x 0.875 = 14 */ }
-p, div.post { font-size: 1rem; /* 16 x 0.75 = 12 */ }
+* { font-size: @base-font; }
+h1,h1>* { font-size: @heading-lg-font; }
+h2,h2>* { font-size: @heading-md-font; }
+h3,h3>* { font-size: @heading-sm-font; }
+h4,h4>* { font-size: @heading-xs-font; }
 
 nav {
   float: left;
@@ -41,11 +43,11 @@ nav {
 }
 
 nav, #content {
-  padding: 4px;
+  padding: @padding;
 }
 
 a {
-  color: #0277BD;
+  color: @link-blue;
   text-decoration: none;
 }
 
@@ -55,9 +57,9 @@ a {
     width: 80%;
     margin: auto;
     background: white;
-    margin-bottom: 16px;
-    border-bottom: thin solid #ddd;
-    padding: 8px;
+    margin-bottom: 4 * @padding;
+    border-bottom: thin solid @border-grey;
+    padding: 2 * @padding;
 
     &.employment {
       h4 {
@@ -66,9 +68,13 @@ a {
 
       ul {
         margin: 0;
-        padding-left: 32px;
+        padding-left: 8 * @padding;
       }
     }
+  }
+
+  pre {
+    padding: @padding 2 * @padding;
   }
 
   form {
@@ -77,7 +83,7 @@ a {
     margin: auto;
     background: white;
     padding-bottom: 0;
-    margin-bottom: 16px;
+    margin-bottom: 4 * @padding;
 
     h1{
       margin: 0;
@@ -99,11 +105,11 @@ a {
 }
 
 #content article>div.post {
-  margin: 8px 0 8px;
+  margin: 2 * @padding 0 2 * @padding;
 }
 
 #content article h2 {
-  margin-bottom: 4px;
+  margin-bottom: @padding;
   margin-top: 0;
 }
 
@@ -119,7 +125,7 @@ nav ul {
     float: none;
     width: 100%;
     height: auto;
-    padding: 8px;
+    padding: 2 * @padding;
   }
 
   nav li {
@@ -138,12 +144,24 @@ nav ul {
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1440px) and (min-resolution: 2dppx),
+(min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2),
+(min-width: 1440px) and (min--moz-device-pixel-ratio: 2),
+(min-width: 1440px) and (-o-min-device-pixel-ratio: 2 / 1) {
 
+  body {
+    font-size: 120%;
+  }
+//  * { font-size: 1.125rem; /* 16 x 0.75 = 12 */ }
+//  h1 { font-size: 2.625rem; /* 16 x 2.25 = 36 */ }
+//  h2 { font-size: 1.875rem; /* 16 x 1.5 = 24 */ }
+//  h3 { font-size: 1.375rem; /* 16 x 1.125 = 18 */ }
+//  h4 { font-size: 1.125rem; /* 16 x 0.875 = 14 */ }
 
-  h1 { font-size: 2.625rem; /* 16 x 2.25 = 36 */ }
-  h2 { font-size: 1.875rem; /* 16 x 1.5 = 24 */ }
-  h3 { font-size: 1.375rem; /* 16 x 1.125 = 18 */ }
-  h4 { font-size: 1.125rem; /* 16 x 0.875 = 14 */ }
-  p, div.post { font-size: 1.125rem; /* 16 x 0.75 = 12 */ }
+  * { font-size: @base-font * 1.1; }
+  h1,h1>* { font-size: @heading-lg-font * 1.1; }
+  h2,h2>* { font-size: @heading-md-font * 1.1; }
+  h3,h3>* { font-size: @heading-sm-font * 1.1; }
+  h4,h4>* { font-size: @heading-xs-font * 1.1; }
 }
+
