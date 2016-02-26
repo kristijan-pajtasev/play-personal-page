@@ -21,6 +21,7 @@ public class Post extends Model {
   @Column(unique=true)
   public String urlTitle;
 
+  @Column(columnDefinition = "TEXT")
   public String post;
 
   public String tags;

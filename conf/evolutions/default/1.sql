@@ -21,7 +21,7 @@ create table posts (
   id                        bigserial not null,
   title                     varchar(255),
   url_title                 varchar(255),
-  post                      varchar(255),
+  post                      TEXT,
   tags                      varchar(255),
   description               varchar(255),
   created                   timestamp,
