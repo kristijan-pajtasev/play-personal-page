@@ -1,14 +1,13 @@
 package models;
 
 import play.data.format.Formats;
-import play.data.validation.Constraints;
 import play.db.ebean.Model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table(name="employment")
@@ -27,22 +26,34 @@ public class Employment extends Model {
   @Formats.DateTime(pattern="dd/MM/yyyy")
   private Date endDate;
 
+  @Column(columnDefinition = "TEXT")
   private String companyDescription;
 
+  @Column(columnDefinition = "TEXT")
   private String description;
 
+  @Column(columnDefinition = "TEXT")
   private String responsibilities;
 
+  @Column(columnDefinition = "TEXT")
   private String technologies;
 
+  @Column(columnDefinition = "TEXT")
   private String tags;
+
+  @Column(columnDefinition = "TEXT")
+  private String keyProjects;
 
   public static Finder<Long, Employment> find = new Finder<Long, Employment>(
     Long.class, Employment.class
   );
 
   public String[] getTechnologiesAsArray() {
-    return this.technologies.split("\n");
+    return this.technologies != null ? this.technologies.split("\n") : null;
+  }
+
+  public String[] getKeyProjectsAsArray() {
+    return this.keyProjects != null ? this.keyProjects.split("\n") : null;
   }
 
   public String[] getResponsibilitiesAsArray() {
@@ -140,5 +151,13 @@ public class Employment extends Model {
 
   public void setRoleName(String roleName) {
     this.roleName = roleName;
+  }
+
+  public String getKeyProjects() {
+    return keyProjects;
+  }
+
+  public void setKeyProjects(String keyProjects) {
+    this.keyProjects = keyProjects;
   }
 }

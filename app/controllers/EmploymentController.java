@@ -15,7 +15,7 @@ import java.util.List;
 public class EmploymentController extends Controller {
 
     public Result index() {
-        List<Employment> employmentsList = Employment.find.orderBy("startDate").findList();
+        List<Employment> employmentsList = Employment.find.orderBy("endDate desc").findList();
         String tags = "";
         for(Employment employment: employmentsList) {
             tags += employment.getTags();

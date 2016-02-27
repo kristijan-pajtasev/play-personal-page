@@ -7,7 +7,12 @@
             <h2><a href="/employment/@{employment.getId()}">@{employment.getCompanyName()} -
                 @{employment.getRoleName()}</a></h2>
             <div>@{employment.getStartDate().format("MMMM yyyy")} -
-                @{employment.getEndDate().format("MMMM yyyy")}</div>
+                @if(employment.getEndDate() != null && !employment.getEndDate().equals("")) {
+                    @{employment.getEndDate().format("MMMM yyyy")}
+                } else {
+                    Present
+                }
+            </div>
             <div>@{employment.getTags()}</div>
         </article>
     }

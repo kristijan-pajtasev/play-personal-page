@@ -24,8 +24,10 @@ public class Post extends Model {
   @Column(columnDefinition = "TEXT")
   public String post;
 
+  @Column(columnDefinition = "TEXT")
   public String tags;
 
+  @Column(columnDefinition = "TEXT")
   public String description;
 
   @Formats.DateTime(pattern="dd/MM/yyyy")

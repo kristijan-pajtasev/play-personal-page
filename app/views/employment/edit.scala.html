@@ -19,7 +19,11 @@
     </label>
 
     <label>End date:
-      <input name="endDate" value="@{employment.getEndDate().format("dd/MM/YYYY")}" />
+      @if(employment.getEndDate() != null && !employment.getEndDate().equals("")) {
+        <input name="endDate" value="@{employment.getEndDate().format("dd/MM/YYYY")}" />
+      } else {
+        <input name="endDate" />
+      }
     </label>
 
     <label>Tags:
@@ -32,6 +36,10 @@
 
     <label>Description:
       <textarea name="description">@{employment.getDescription()}</textarea>
+    </label>
+
+    <label>Key projects:
+      <textarea name="keyProyects"></textarea>
     </label>
 
     <label>Responsibilities:

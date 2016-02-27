@@ -9,11 +9,12 @@ create table employment (
   role_name                 varchar(255),
   start_date                timestamp,
   end_date                  timestamp,
-  company_description       varchar(255),
-  description               varchar(255),
-  responsibilities          varchar(255),
-  technologies              varchar(255),
-  tags                      varchar(255),
+  company_description       TEXT,
+  description               TEXT,
+  responsibilities          TEXT,
+  technologies              TEXT,
+  tags                      TEXT,
+  key_projects              TEXT,
   constraint pk_employment primary key (id))
 ;
 
@@ -22,8 +23,8 @@ create table posts (
   title                     varchar(255),
   url_title                 varchar(255),
   post                      TEXT,
-  tags                      varchar(255),
-  description               varchar(255),
+  tags                      TEXT,
+  description               TEXT,
   created                   timestamp,
   published                 timestamp,
   constraint uq_posts_url_title unique (url_title),
