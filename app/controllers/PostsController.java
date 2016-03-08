@@ -22,7 +22,7 @@ import static play.data.Form.form;
 public class PostsController extends Controller {
 
     public Result index() {
-        List<Post> postsList = Post.find.orderBy("published").findList();
+        List<Post> postsList = Post.find.orderBy("published desc").findList();
         String tags = "";
         for(Post post: postsList) {
             tags += post.tags;
