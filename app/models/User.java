@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="users")
@@ -28,6 +29,10 @@ public class User extends Model {
   );
 
   public static boolean authenticate(String username, String password) {
+    List<User> users = find.where().eq("username", username).eq("password", password).findList();
+    if(users.size() == 0 || users.size() > 1) {
+      return false;
+    }
     return true;
   }
 
